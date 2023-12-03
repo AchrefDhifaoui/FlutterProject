@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "623545729110",
+    "project_id": "myflutterproject-aa2e0",
+    "storage_bucket": "myflutterproject-aa2e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623545729110:android:c78ab257f0ec0cf3ffbbf7",
+        "android_client_info": {
+          "package_name": "com.example.forgamers"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAAgZHH-EYpJRsaLQFt16nnzJ3E049P-N0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
