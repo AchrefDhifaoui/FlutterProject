@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:forgamers/screens/pick_profile_image_screen.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:forgamers/screens/signin_screen.dart';
 import 'package:forgamers/theme/theme.dart';
@@ -58,6 +59,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         id: userId,
         fullName: _fullNameController.text,
         email: email,
+        image: '',
+        fcb_link: '',
         latitude: position.latitude,
         longitude: position.longitude,
         games: [], // Initialize with an empty list
@@ -71,6 +74,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
         'latitude': newUser.latitude,
         'longitude': newUser.longitude,
         'games': newUser.games,
+        'image' : newUser.image,
+        'fcb_link' : newUser.fcb_link,
       });
 
       // Successfully signed up, you can navigate to the next screen or show a success message.
@@ -83,7 +88,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       // Navigate to the ChoosingGames screen with the new user information
       Navigator.push(
         context,
-        MaterialPageRoute(builder: (context) => ChoosingGames(user: newUser)),
+        MaterialPageRoute(builder: (context) => PickProfileImageScreen(user: newUser)),
       );
     } catch (e) {
       // Handle errors here

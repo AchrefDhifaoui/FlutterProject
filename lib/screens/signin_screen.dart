@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:forgamers/screens/home_screen.dart';
+import 'package:forgamers/screens/profil_screen.dart';
 import 'package:icons_plus/icons_plus.dart';
 import 'package:forgamers/screens/signup_screen.dart';
 import 'package:forgamers/screens/choosing_games_screen.dart'; // Import the ChoosingGames page
@@ -45,6 +47,8 @@ class _SignInScreenState extends State<SignInScreen> {
           id: userId,
           fullName: userSnapshot['fullName'] ?? '', // Use default value if not present
           email: userSnapshot['email'] ?? '',
+          image: userSnapshot['image'] ?? '',
+          fcb_link: userSnapshot['fcb_link'] ?? '',
           latitude: userSnapshot['latitude'] ?? 0.0,
           longitude: userSnapshot['longitude'] ?? 0.0,
           games: List<String>.from(userSnapshot['games'] ?? []), // Use empty list if not present
@@ -54,7 +58,7 @@ class _SignInScreenState extends State<SignInScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => ChoosingGames(user: currentUser),
+            builder: (context) => HomeScreen(user: currentUser),
           ),
         );
       } else {
